@@ -157,6 +157,7 @@ button {
 import Serialport from "serialport";
 import echarts from "echarts";
 import { setInterval } from "timers";
+
 // import covButton from './button'
 export default {
   name: "test",
@@ -245,6 +246,10 @@ export default {
   mounted() {
     Serialport.list((err, ports) => {
       this.ports = ports;
+      // console.log(err,ports,'ports')
+      ports.forEach(ele => {
+        console.log(ele,'port')
+      })
     });
   },
   methods: {
@@ -261,6 +266,9 @@ export default {
       let that = this;
       console.log(e.$options.propsData);
       let myChart = echarts.init(document.getElementById("myChart"));
+      if (this.int) {
+        clearInterval(this.int);
+      }
       if (e.$options.propsData.name == "second") {
         this.int = self.setInterval(function() {
           //   console.log("drawLine");
@@ -271,6 +279,17 @@ export default {
             that.source.splice(0, that.source.length - that.maxLength);
           myChart.setOption(that.option);
         }, 500);
+        // SerialPort.list(function(err, ports) {
+        //   console.log(err, ports);
+        //   ports.forEach(function(port) {
+        //     console.log(port.comName);
+        //     console.log(port.pnpId);
+        //     console.log(port.manufacturer);
+        //   });
+        // });
+        // SerialPort.list()
+        //   .then(ports => console.log(ports))
+        //   .catch(err => console.log(err));
       } else {
         if (this.int) {
           clearInterval(this.int);
