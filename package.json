@@ -1,12 +1,12 @@
 {
-  "name": "mytest",
-  "productName": "mytest",
+  "name": "TTS",
+  "productName": "TTS",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
-    "package": "electron-forge package",
+    "package": "electron-forge package --platform=win32 --arch=x64",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
@@ -36,23 +36,26 @@
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
-      "github_repository": { 
-        "owner": "mrruantion", 
+      "github_repository": {
+        "owner": "mrruantion",
         "name": "TTS"
       }
     }
   },
   "dependencies": {
+    "bytebuffer": "^5.0.1",
     "echarts": "^4.1.0",
     "electron-compile": "^6.4.2",
     "electron-devtools-installer": "^2.2.4",
     "electron-squirrel-startup": "^1.0.0",
     "element-ui": "^2.3.9",
+    "excel4node": "^1.5.0",
     "insert-css": "^2.0.0",
     "mysql": "^2.15.0",
     "serialport": "^6.2.0",
     "vue": "^2.5.16",
-    "vueify": "^9.4.1"
+    "vueify": "^9.4.1",
+    "xlsx": "^0.13.5"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",
