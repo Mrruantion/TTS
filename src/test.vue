@@ -1584,7 +1584,7 @@ export default {
           callback();
         }
       }
-      _this.givestring += string.toString("hex");
+      // _this.givestring += string.toString("hex");
       // _this.givestring = ssf.toString("hex")
       if (_this.setIn) {
         clearInterval(_this.setIn);
@@ -2014,10 +2014,10 @@ export default {
 
       var _this = this;
       _this.centerDialogVisible = true;
-      // this.givestring = fs.readFileSync(
-      //   "C:/Users/Administrator/Documents/Tencent Files/751476821/FileRecv/aa.txt",
-      //   "utf-8"
-      // );
+      this.givestring = fs.readFileSync(
+        "C:/Users/Administrator/Documents/Tencent Files/751476821/FileRecv/aa.txt",
+        "utf-8"
+      );
       _this.setId = 0;
       _this.zIArr = [];
       _this.initchartsDate();
